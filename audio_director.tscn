@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctqeefw8bbby"]
+
+[ext_resource type="Script" path="res://AudioDirector.gd" id="1_y4o31"]
+
+[node name="AudioDirector" type="Node"]
+script = ExtResource("1_y4o31")
+
+[node name="SFX Stream" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"SFX"
+
+[node name="Music Stream" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"Music"
