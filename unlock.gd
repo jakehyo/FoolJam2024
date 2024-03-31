@@ -14,7 +14,7 @@ func _process(_delta):
 	
 func open_the_gates():
 	#Play FAIL
-	chest.free() 
+	chest.free()
 	queue_free()
 	get_tree().paused = false
 	#Spawn Daunting Number of Mobs

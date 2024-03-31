@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d2duel2ykvpgx"]
+[gd_scene load_steps=15 format=3 uid="uid://d2duel2ykvpgx"]
 
 [ext_resource type="Script" path="res://fooljamgame.gd" id="1_m7jyc"]
 [ext_resource type="PackedScene" uid="uid://betjalark706r" path="res://player.tscn" id="1_mwo0h"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://bx4806x1ir47x" path="res://background/tree.tscn" id="8_fckou"]
 [ext_resource type="PackedScene" uid="uid://c861oiix7bbc7" path="res://chest.tscn" id="9_mk77n"]
 [ext_resource type="PackedScene" uid="uid://ctqeefw8bbby" path="res://audio_director.tscn" id="10_cvv13"]
-[ext_resource type="Script" path="res://PauseScreen.gd" id="11_b57ti"]
 
 [sub_resource type="Curve2D" id="Curve2D_0qooc"]
 _data = {
@@ -3172,12 +3171,10 @@ position = Vector2(-5719, -788)
 
 [node name="TimeDisplay" type="Label" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 30.0
-offset_top = 43.0
-offset_right = 601.0
-offset_bottom = 182.0
-theme_override_font_sizes/font_size = 80
-text = "Placeholder"
+offset_left = 98.0
+offset_top = 81.0
+offset_right = 1070.0
+offset_bottom = 328.0
 vertical_alignment = 1
 
 [node name="WorldTime" type="Timer" parent="."]
@@ -3186,55 +3183,7 @@ wait_time = 3000.0
 one_shot = true
 autostart = true
 
-[node name="PauseScreen" type="CanvasLayer" parent="."]
-unique_name_in_owner = true
-process_mode = 3
-visible = false
-script = ExtResource("11_b57ti")
-
-[node name="ColorRect" type="ColorRect" parent="PauseScreen"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.588235)
-
-[node name="ReturnButton" type="Button" parent="PauseScreen"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -218.5
-offset_top = -133.0
-offset_right = 218.5
-offset_bottom = 22.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 80
-text = "RETURN"
-
-[node name="ExitGame" type="Button" parent="PauseScreen"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -217.0
-offset_top = 53.0
-offset_right = 217.0
-offset_bottom = 199.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 80
-text = "EXIT"
-
 [connection signal="set_music_calm" from="." to="AudioDirector" method="_on_game_set_music_calm"]
 [connection signal="set_music_intense" from="." to="AudioDirector" method="_on_game_set_music_intense"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="PauseScreen/ReturnButton" to="." method="_on_return_button_pressed"]
-[connection signal="pressed" from="PauseScreen/ReturnButton" to="PauseScreen" method="_on_return_button_pressed"]
-[connection signal="pressed" from="PauseScreen/ExitGame" to="PauseScreen" method="_on_exit_game_pressed"]

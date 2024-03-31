@@ -6,13 +6,15 @@ var mobCount: int = 0
 signal set_music_intense
 signal set_music_calm
 
-func _ready():
-	#spawn_mob();
-	#spawn_mob();
-	#spawn_mob();
-	#spawn_mob();
-	#spawn_mob();
+func _process(_delta):
+	%TimeDisplay.text = str(%WorldTime.time_left).pad_decimals(2)
 	pass
+
+func _physics_process(_delta):
+	if Input.is_action_just_pressed("key_exit") && !get_tree().paused:
+		get_tree().paused = true
+		%PauseScreen.visible = true
+
 
 func spawn_mob():
 	#Spawn different mobs using different scenes and rand function
@@ -40,3 +42,4 @@ func _on_mob_death():
 	mobCount -= 1
 	if mobCount < intenseMusicMobCount:
 		set_music_calm.emit()
+
