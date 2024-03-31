@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxk4e58mk1mpx"]
+[gd_scene load_steps=9 format=3 uid="uid://d3287eo7afi3o"]
 
 [ext_resource type="Script" path="res://title_screen.gd" id="1_xqtex"]
 [ext_resource type="FontFile" uid="uid://y2c8gjgui7sp" path="res://tic-80-wide-font.ttf" id="2_8rc53"]
+[ext_resource type="Script" path="res://Music Stream.gd" id="2_xb37v"]
 [ext_resource type="Texture2D" uid="uid://j1bvr5ai2kld" path="res://background/title_screen.jpg" id="3_badss"]
+[ext_resource type="AudioStream" uid="uid://dhmd8qbtwoe6l" path="res://audio/music/titleHEAD.wav" id="3_fkt8b"]
+[ext_resource type="AudioStream" uid="uid://div7twm1wh2gs" path="res://audio/music/titleBODY.wav" id="4_007xx"]
+[ext_resource type="PackedScene" uid="uid://dfamkd4aaeg51" path="res://sfx.tscn" id="5_oplce"]
 
 [sub_resource type="Theme" id="Theme_3oyiw"]
 default_base_scale = 2.0
@@ -61,5 +65,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_badss")
+
+[node name="SFX" parent="." instance=ExtResource("5_oplce")]
+unique_name_in_owner = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+script = ExtResource("2_xb37v")
+startStream = ExtResource("3_fkt8b")
+loopStream = ExtResource("4_007xx")
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
