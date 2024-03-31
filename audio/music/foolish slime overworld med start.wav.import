@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cr7qvjimqbxb1"
-path="res://.godot/imported/foolish slime overworld med start.wav-5317aa5ef6ef589b0ad011570b9639c0.sample"
+uid="uid://ciwlsv0fxcfao"
+path="res://.godot/imported/foolish slime overworld med START.wav-1b80b61ea9ddd86e9e146d962835a1ed.sample"
 
 [deps]
 
-source_file="res://audio/music/foolish slime overworld med start.wav"
-dest_files=["res://.godot/imported/foolish slime overworld med start.wav-5317aa5ef6ef589b0ad011570b9639c0.sample"]
+source_file="res://audio/music/foolish slime overworld med START.wav"
+dest_files=["res://.godot/imported/foolish slime overworld med START.wav-1b80b61ea9ddd86e9e146d962835a1ed.sample"]
 
 [params]
 

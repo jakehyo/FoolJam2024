@@ -2,7 +2,11 @@ extends Node
 
 var isCalm: bool = true
 
-var prevFadeInProgress: bool = false
+signal fadeOutComplete
+signal fadeInComplete
+
+var fadeOutInProg: bool = false
+var fadeInProg: bool = false
 
 func _ready():
 	%MusicCalm.set_volume_db(0.0)
@@ -10,29 +14,39 @@ func _ready():
 
 
 func _on_game_set_music_calm():
-	if not isCalm and not prevFadeInProgress:
+	if fadeInProg:
+		await fadeInComplete
+	if fadeOutInProg:
+		await fadeOutComplete
+	if not isCalm:
 		isCalm = true
-		prevFadeInProgress = true
 		fadein(%MusicCalm)
-		await fadeout(%MusicIntense)
-		prevFadeInProgress = false
+		fadeout(%MusicIntense)
 
 
 func _on_game_set_music_intense():
-	if isCalm and not prevFadeInProgress:
+	if fadeInProg:
+		await fadeInComplete
+	if fadeOutInProg:
+		await fadeOutComplete
+	if isCalm:
 		isCalm = false
-		prevFadeInProgress = true
 		fadein(%MusicIntense)
-		await fadeout(%MusicCalm)
-		prevFadeInProgress = false
+		fadeout(%MusicCalm)
 		
 
 func fadeout(stream_to_fade: AudioStreamPlayer):
+	fadeOutInProg = true
 	while stream_to_fade.volume_db > -90.0:
-		stream_to_fade.volume_db -= 0.2
+		stream_to_fade.volume_db -= 0.1
 		await get_tree().create_timer(0.001).timeout
+	fadeOutInProg = false
+	fadeOutComplete.emit()
 
 func fadein(stream_to_fade: AudioStreamPlayer):
+	fadeInProg = true
 	while stream_to_fade.volume_db < 0.0:
-		stream_to_fade.volume_db += 1.0
+		stream_to_fade.volume_db += 1.2
 		await get_tree().create_timer(0.001).timeout
+	fadeInProg = false
+	fadeInComplete.emit()

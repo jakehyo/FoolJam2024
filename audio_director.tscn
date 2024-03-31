@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://AudioDirector.gd" id="1_y4o31"]
 [ext_resource type="Script" path="res://Music Stream.gd" id="2_sq0cl"]
-[ext_resource type="AudioStream" uid="uid://d4jlg0bpm1lak" path="res://audio/music/foolish slime overworld light START.wav" id="3_xtmm8"]
-[ext_resource type="AudioStream" uid="uid://dbjum3mq8hxe8" path="res://audio/music/foolish slime overworld light LOOP.wav" id="4_sabyt"]
-[ext_resource type="AudioStream" uid="uid://cr7qvjimqbxb1" path="res://audio/music/foolish slime overworld med start.wav" id="5_xj6lj"]
-[ext_resource type="AudioStream" uid="uid://oupqynpi5jxl" path="res://audio/music/foolish slime overworld med LOOP.wav" id="6_3a3js"]
+[ext_resource type="AudioStream" uid="uid://0122weaif4jb" path="res://audio/music/foolish slime overworld light START.wav" id="3_xtmm8"]
+[ext_resource type="AudioStream" uid="uid://v7upyrojrqyb" path="res://audio/music/foolish slime overworld light LOOP.wav" id="4_sabyt"]
+[ext_resource type="AudioStream" uid="uid://ciwlsv0fxcfao" path="res://audio/music/foolish slime overworld med START.wav" id="5_1ehtt"]
+[ext_resource type="AudioStream" uid="uid://cm6ohq848p5us" path="res://audio/music/foolish slime overworld med LOOP.wav" id="6_3a3js"]
 
 [node name="AudioDirector" type="Node"]
 process_mode = 3
@@ -23,5 +23,5 @@ loopStream = ExtResource("4_sabyt")
 [node name="MusicIntense" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_sq0cl")
-startStream = ExtResource("5_xj6lj")
+startStream = ExtResource("5_1ehtt")
 loopStream = ExtResource("6_3a3js")
