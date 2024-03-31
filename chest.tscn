@@ -9,6 +9,7 @@ size = Vector2(26, 23)
 
 [node name="Chest" type="Area2D"]
 scale = Vector2(2, 2)
+collision_layer = 4
 script = ExtResource("1_f8pp6")
 
 [node name="GroundShadow" type="Sprite2D" parent="."]

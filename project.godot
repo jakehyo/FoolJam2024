@@ -123,7 +123,10 @@ primary_fire={
 
 [layer_names]
 
+2d_physics/layer_1="player"
+2d_physics/layer_2="mob"
 3d_physics/layer_2="player"
+2d_physics/layer_3="chest"
 
 [rendering]
 

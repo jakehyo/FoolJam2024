@@ -23,10 +23,4 @@ func _physics_process(_delta):
 			%Slime.play_hurt()
 		if health <= 0.0:
 			health_depleted.emit()
-
-func open_chest():
-	#Pause Game and Start Typing Sequence
-	get_tree().paused = true
-	const UNLOCK = preload("res://unlock.tscn")
-	var unlock_overlay = UNLOCK.instantiate()
-	get_parent().add_child(unlock_overlay)
+	

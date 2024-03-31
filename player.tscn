@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player.gd" id="1_a14st"]
 [ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="2_anrc5"]
-[ext_resource type="PackedScene" uid="uid://bow8xpr5nxl4l" path="res://gun.tscn" id="3_8c0kc"]
+[ext_resource type="PackedScene" uid="uid://bow8xpr5nxl4l" path="res://items/gun.tscn" id="3_8c0kc"]
 [ext_resource type="Script" path="res://Cursor.gd" id="4_pbdm3"]
 [ext_resource type="Texture2D" uid="uid://ch83b53tp83ok" path="res://crosshair.png" id="5_i6i86"]
 
