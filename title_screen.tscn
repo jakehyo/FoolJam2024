@@ -1,38 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxk4e58mk1mpx"]
+[gd_scene load_steps=5 format=3 uid="uid://cxk4e58mk1mpx"]
 
 [ext_resource type="Script" path="res://title_screen.gd" id="1_xqtex"]
-
-[sub_resource type="FontFile" id="FontFile_xx80c"]
-resource_local_to_scene = true
-cache/0/100/0/ascent = 0.0
-cache/0/100/0/descent = 0.0
-cache/0/100/0/underline_position = 0.0
-cache/0/100/0/underline_thickness = 0.0
-cache/0/100/0/scale = 1.0
-cache/0/100/0/kerning_overrides/100/0 = Vector2(0, 0)
-cache/0/100/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/100/0/kerning_overrides/120/0 = Vector2(0, 0)
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/100/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/120/0 = Vector2(0, 0)
-cache/0/120/0/ascent = 0.0
-cache/0/120/0/descent = 0.0
-cache/0/120/0/underline_position = 0.0
-cache/0/120/0/underline_thickness = 0.0
-cache/0/120/0/scale = 1.0
-cache/0/120/0/kerning_overrides/100/0 = Vector2(0, 0)
-cache/0/120/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/120/0/kerning_overrides/120/0 = Vector2(0, 0)
+[ext_resource type="FontFile" uid="uid://y2c8gjgui7sp" path="res://tic-80-wide-font.ttf" id="2_8rc53"]
+[ext_resource type="Texture2D" uid="uid://j1bvr5ai2kld" path="res://background/title_screen.jpg" id="3_badss"]
 
 [sub_resource type="Theme" id="Theme_3oyiw"]
 default_base_scale = 2.0
-default_font = SubResource("FontFile_xx80c")
-default_font_size = 120
+default_font = ExtResource("2_8rc53")
+default_font_size = 70
 
 [node name="Title Screen" type="Control"]
 layout_mode = 3
@@ -52,42 +27,39 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -457.0
-offset_top = 13.0
-offset_right = 458.0
-offset_bottom = 174.0
+offset_left = -890.0
+offset_top = 15.0
+offset_right = 703.0
+offset_bottom = 215.0
 grow_horizontal = 2
 theme = SubResource("Theme_3oyiw")
-theme_override_colors/default_color = Color(0.847059, 0.717647, 0.611765, 1)
+theme_override_colors/default_color = Color(0.862745, 0.47451, 0.364706, 1)
 bbcode_enabled = true
 text = "[center]Survivalist Slime"
 fit_content = true
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -615.0
-offset_top = -249.0
-offset_right = -497.0
-offset_bottom = -216.0
-grow_horizontal = 0
+offset_top = -285.0
+offset_right = 118.0
+offset_bottom = -252.0
 grow_vertical = 0
 scale = Vector2(4, 4)
+theme_override_fonts/font = ExtResource("2_8rc53")
 text = "START"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.356863, 0.592157, 0.427451, 1)
+texture = ExtResource("3_badss")
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

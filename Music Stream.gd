@@ -13,7 +13,7 @@ func _ready():
 
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if not hasLooped:
 		playbackPos = self.get_playback_position() + AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency()
 		if startStream.get_length() - playbackPos <= AudioServer.get_time_to_next_mix():
