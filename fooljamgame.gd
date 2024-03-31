@@ -8,7 +8,7 @@ signal set_music_intense
 signal set_music_calm
 
 func _process(_delta):
-	%TimeDisplay.text = str(%WorldTime.time_left).pad_decimals(2)
+	%TimeDisplay.text = str(%WorldTime.time_left).pad_decimals(0)
 	pass
 
 func _physics_process(_delta):

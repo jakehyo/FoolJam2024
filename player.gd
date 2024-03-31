@@ -4,6 +4,7 @@ signal health_depleted
 
 var health = 100.0
 @export var speed = 600.0
+@export var damage_rate = 10.0
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -15,10 +16,9 @@ func _physics_process(_delta):
 		else:
 			%Slime.play_idle()
 	
-	const DAMAGE_RATE = 5.0
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
-		health -= DAMAGE_RATE * overlapping_mobs.size() * _delta
+		health -= damage_rate * overlapping_mobs.size() * _delta
 		%ProgressBar.value = health
 		if !%Slime.is_hurt():
 			%Slime.play_hurt()
