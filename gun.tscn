@@ -11,6 +11,11 @@ position = Vector2(-2, 0)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_pokdw")
+bullets_per_shot = 1
+spread = 0.0
+bullet_speed = 3000.0
+bullet_damage = 10
+bullet_pierce = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cibm3")

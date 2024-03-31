@@ -5,6 +5,7 @@ var travelled_distance = 0
 var SPEED = 1000.0
 var RANGE = 1200.0
 var DAMAGE = 1
+var PIERCE = 0
 
 func _physics_process(delta):
 	var direction = Vector2.RIGHT.rotated(rotation)
@@ -16,6 +17,9 @@ func _physics_process(delta):
 
 
 func _on_body_entered(body):
-	queue_free()
+	if PIERCE > 0:
+		PIERCE -= 1
+	else:
+		queue_free()
 	if body.has_method("take_damage"):
 		body.take_damage(DAMAGE)

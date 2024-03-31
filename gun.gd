@@ -6,6 +6,7 @@ extends Area2D
 @export var bullet_speed = 1000.0
 @export var bullet_range = 1000.0
 @export var bullet_damage = 1
+@export var bullet_pierce = 0
 
 var time_since_last_shot = 1.0
 
@@ -22,6 +23,7 @@ func shoot():
 		new_bullet.SPEED = bullet_speed
 		new_bullet.RANGE = bullet_range
 		new_bullet.DAMAGE = bullet_damage
+		new_bullet.PIERCE = bullet_pierce
 		new_bullet.global_position = %ShootingPoint.global_position
 		new_bullet.global_rotation = %ShootingPoint.global_rotation + randf_range(-spread, spread)
 		%ShootingPoint.add_child(new_bullet)
