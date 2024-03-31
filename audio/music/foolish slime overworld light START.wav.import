@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d4jlg0bpm1lak"
+path="res://.godot/imported/foolish slime overworld light START.wav-08eb6711f096b274f4781731f3203e64.sample"
+
+[deps]
+
+source_file="res://audio/music/foolish slime overworld light START.wav"
+dest_files=["res://.godot/imported/foolish slime overworld light START.wav-08eb6711f096b274f4781731f3203e64.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

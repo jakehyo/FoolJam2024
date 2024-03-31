@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2duel2ykvpgx"]
+[gd_scene load_steps=11 format=3 uid="uid://d2duel2ykvpgx"]
 
 [ext_resource type="Script" path="res://fooljamgame.gd" id="1_m7jyc"]
 [ext_resource type="PackedScene" uid="uid://betjalark706r" path="res://player.tscn" id="1_mwo0h"]
 [ext_resource type="PackedScene" uid="uid://bx4806x1ir47x" path="res://pine_tree.tscn" id="2_6k4nw"]
 [ext_resource type="Texture2D" uid="uid://cv8t1q71dfvwt" path="res://background/Grass.PNG" id="2_8vsiu"]
-[ext_resource type="PackedScene" uid="uid://c861oiix7bbc7" path="res://chest.tscn" id="5_ug8ku"]
+[ext_resource type="PackedScene" path="res://chest.tscn" id="5_ug8ku"]
 [ext_resource type="PackedScene" uid="uid://h6kqcl8qg3t2" path="res://items/item.tscn" id="6_e0uhv"]
+[ext_resource type="PackedScene" uid="uid://ctqeefw8bbby" path="res://audio_director.tscn" id="7_wfx2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ldmev"]
 texture = ExtResource("2_8vsiu")
@@ -2604,5 +2605,9 @@ position = Vector2(739, 459)
 
 [node name="Item" parent="." instance=ExtResource("6_e0uhv")]
 
+[node name="AudioDirector" parent="." instance=ExtResource("7_wfx2x")]
+
+[connection signal="set_music_calm" from="." to="AudioDirector" method="_on_game_set_music_calm"]
+[connection signal="set_music_intense" from="." to="AudioDirector" method="_on_game_set_music_intense"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

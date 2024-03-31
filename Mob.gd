@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal on_mob_death
+
 var health = 3
 @onready var player = get_node("/root/Game/Player")
 
@@ -30,6 +32,7 @@ func take_damage(amount):
 	health -= amount
 	%Wolf.play_hurt()
 	if health <= 0:
+		on_mob_death.emit()
 		queue_free()
 		const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
 		var smoke = SMOKE_SCENE.instantiate()

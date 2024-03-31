@@ -1,14 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctqeefw8bbby"]
+[gd_scene load_steps=7 format=3 uid="uid://ctqeefw8bbby"]
 
 [ext_resource type="Script" path="res://AudioDirector.gd" id="1_y4o31"]
+[ext_resource type="Script" path="res://Music Stream.gd" id="2_sq0cl"]
+[ext_resource type="AudioStream" uid="uid://d4jlg0bpm1lak" path="res://audio/music/foolish slime overworld light START.wav" id="3_xtmm8"]
+[ext_resource type="AudioStream" uid="uid://dbjum3mq8hxe8" path="res://audio/music/foolish slime overworld light LOOP.wav" id="4_sabyt"]
+[ext_resource type="AudioStream" uid="uid://cr7qvjimqbxb1" path="res://audio/music/foolish slime overworld med start.wav" id="5_xj6lj"]
+[ext_resource type="AudioStream" uid="uid://oupqynpi5jxl" path="res://audio/music/foolish slime overworld med LOOP.wav" id="6_3a3js"]
 
 [node name="AudioDirector" type="Node"]
+process_mode = 3
 script = ExtResource("1_y4o31")
 
-[node name="SFX Stream" type="AudioStreamPlayer" parent="."]
+[node name="SFXStream" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-bus = &"SFX"
 
-[node name="Music Stream" type="AudioStreamPlayer" parent="."]
+[node name="MusicCalm" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-bus = &"Music"
+script = ExtResource("2_sq0cl")
+startStream = ExtResource("3_xtmm8")
+loopStream = ExtResource("4_sabyt")
+
+[node name="MusicIntense" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_sq0cl")
+startStream = ExtResource("5_xj6lj")
+loopStream = ExtResource("6_3a3js")

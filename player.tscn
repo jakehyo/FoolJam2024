@@ -42,6 +42,11 @@ unique_name_in_owner = true
 [node name="Gun" parent="." instance=ExtResource("3_8c0kc")]
 unique_name_in_owner = true
 position = Vector2(0, -44)
+bullets_per_shot = 5
+spread = 0.01
+bullet_speed = 10000.0
+bullet_damage = 3
+bullet_pierce = 10
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
