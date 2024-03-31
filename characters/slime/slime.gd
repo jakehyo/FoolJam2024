@@ -12,11 +12,10 @@ func play_hurt():
 	%AnimationPlayer.queue("walk")
 	
 func flip():
-	var flip = %WolfBody.flip_h
-	%WolfBody.flip_h = !flip
+	var isflipped = %WolfBody.flip_h
+	%WolfBody.flip_h = !isflipped
 	
 func is_hurt():
-	print(%AnimationPlayer.assigned_animation)
 	return %AnimationPlayer.assigned_animation == "hurt"
 	
 
