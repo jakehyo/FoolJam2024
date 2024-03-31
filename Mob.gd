@@ -3,8 +3,23 @@ extends CharacterBody2D
 var health = 3
 @onready var player = get_node("/root/Game/Player")
 
+var onRight
+
 func _ready():
 	%Wolf.play_walk()
+	onRight = global_position.x - player.global_position.x >= 0.0
+	if !onRight:
+		%Wolf.flip()
+	
+func _process(_delta):
+	if global_position.x - player.global_position.x < 0.0 && onRight:
+		onRight = false
+		%Wolf.flip()
+	
+	if global_position.x - player.global_position.x >= 0.0 && !onRight:
+		onRight = true
+		%Wolf.flip()
+	
 
 func _physics_process(_delta):
 	var direction = global_position.direction_to(player.global_position)
