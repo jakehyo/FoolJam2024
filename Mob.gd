@@ -4,7 +4,7 @@ var health = 3
 @onready var player = get_node("/root/Game/Player")
 
 func _ready():
-	%Slime.play_walk()
+	%Wolf.play_walk()
 
 func _physics_process(_delta):
 	var direction = global_position.direction_to(player.global_position)
@@ -13,7 +13,7 @@ func _physics_process(_delta):
 
 func take_damage(amount):
 	health -= amount
-	%Slime.play_hurt()
+	%Wolf.play_hurt()
 	if health <= 0:
 		queue_free()
 		const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
