@@ -1,14 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2duel2ykvpgx"]
+[gd_scene load_steps=15 format=3 uid="uid://d2duel2ykvpgx"]
 
 [ext_resource type="Script" path="res://fooljamgame.gd" id="1_m7jyc"]
 [ext_resource type="PackedScene" uid="uid://betjalark706r" path="res://player.tscn" id="1_mwo0h"]
 [ext_resource type="Texture2D" uid="uid://cv8t1q71dfvwt" path="res://background/Grass.PNG" id="2_8vsiu"]
-[ext_resource type="PackedScene" uid="uid://d1khp4duc05la" path="res://background/sand.tscn" id="5_ctls3"]
+[ext_resource type="PackedScene" path="res://background/sand.tscn" id="5_ctls3"]
 [ext_resource type="PackedScene" uid="uid://h6kqcl8qg3t2" path="res://items/item.tscn" id="6_e0uhv"]
-[ext_resource type="PackedScene" uid="uid://dsxhohwrg81yq" path="res://background/stone1.tscn" id="6_rapop"]
-[ext_resource type="PackedScene" uid="uid://cfb5lflkrslnx" path="res://background/stone2.tscn" id="7_bjy8r"]
-[ext_resource type="PackedScene" uid="uid://bx4806x1ir47x" path="res://background/tree.tscn" id="8_fckou"]
-[ext_resource type="PackedScene" uid="uid://c861oiix7bbc7" path="res://chest.tscn" id="9_mk77n"]
+[ext_resource type="PackedScene" path="res://background/stone1.tscn" id="6_rapop"]
+[ext_resource type="PackedScene" path="res://background/stone2.tscn" id="7_bjy8r"]
+[ext_resource type="PackedScene" path="res://background/tree.tscn" id="8_fckou"]
+[ext_resource type="PackedScene" path="res://chest.tscn" id="9_mk77n"]
+[ext_resource type="PackedScene" uid="uid://ctqeefw8bbby" path="res://audio_director.tscn" id="10_cvv13"]
 
 [sub_resource type="Curve2D" id="Curve2D_0qooc"]
 _data = {
@@ -3164,5 +3165,9 @@ position = Vector2(-7630, -2685)
 z_index = -1
 position = Vector2(-5719, -788)
 
+[node name="AudioDirector" parent="." instance=ExtResource("10_cvv13")]
+
+[connection signal="set_music_calm" from="." to="AudioDirector" method="_on_game_set_music_calm"]
+[connection signal="set_music_intense" from="." to="AudioDirector" method="_on_game_set_music_intense"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
