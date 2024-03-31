@@ -1,14 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://d2duel2ykvpgx"]
+[gd_scene load_steps=17 format=3 uid="uid://d2duel2ykvpgx"]
 
 [ext_resource type="Script" path="res://fooljamgame.gd" id="1_m7jyc"]
 [ext_resource type="PackedScene" uid="uid://betjalark706r" path="res://player.tscn" id="1_mwo0h"]
 [ext_resource type="Texture2D" uid="uid://cv8t1q71dfvwt" path="res://background/Grass.PNG" id="2_8vsiu"]
-[ext_resource type="PackedScene" path="res://background/sand.tscn" id="5_ctls3"]
+[ext_resource type="Texture2D" uid="uid://blvpyccujroiy" path="res://background/FinalAltar.jpg" id="4_58n3x"]
+[ext_resource type="PackedScene" uid="uid://d1khp4duc05la" path="res://background/sand.tscn" id="5_ctls3"]
 [ext_resource type="PackedScene" uid="uid://h6kqcl8qg3t2" path="res://items/item.tscn" id="6_e0uhv"]
-[ext_resource type="PackedScene" path="res://background/stone1.tscn" id="6_rapop"]
-[ext_resource type="PackedScene" path="res://background/stone2.tscn" id="7_bjy8r"]
-[ext_resource type="PackedScene" path="res://background/tree.tscn" id="8_fckou"]
-[ext_resource type="PackedScene" path="res://chest.tscn" id="9_mk77n"]
+[ext_resource type="PackedScene" uid="uid://dsxhohwrg81yq" path="res://background/stone1.tscn" id="6_rapop"]
+[ext_resource type="PackedScene" uid="uid://cfb5lflkrslnx" path="res://background/stone2.tscn" id="7_bjy8r"]
+[ext_resource type="PackedScene" uid="uid://bx4806x1ir47x" path="res://background/tree.tscn" id="8_fckou"]
+[ext_resource type="PackedScene" uid="uid://c861oiix7bbc7" path="res://chest.tscn" id="9_mk77n"]
 [ext_resource type="PackedScene" uid="uid://ctqeefw8bbby" path="res://audio_director.tscn" id="10_cvv13"]
 [ext_resource type="Script" path="res://PauseScreen.gd" id="11_b57ti"]
 
@@ -2565,6 +2566,14 @@ autostart = true
 unique_name_in_owner = true
 visible = false
 
+[node name="TextureRect" type="TextureRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_58n3x")
+
 [node name="ColorRect" type="ColorRect" parent="GameOver"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -3172,13 +3181,12 @@ position = Vector2(-5719, -788)
 
 [node name="TimeDisplay" type="Label" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 30.0
-offset_top = 43.0
-offset_right = 601.0
-offset_bottom = 182.0
+offset_left = 16.0
+offset_top = 3.0
+offset_right = 587.0
+offset_bottom = 142.0
 theme_override_font_sizes/font_size = 80
 text = "Placeholder"
-vertical_alignment = 1
 
 [node name="WorldTime" type="Timer" parent="."]
 unique_name_in_owner = true

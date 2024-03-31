@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://h6kqcl8qg3t2"]
+[gd_scene load_steps=7 format=3 uid="uid://h6kqcl8qg3t2"]
 
 [ext_resource type="Script" path="res://items/item.gd" id="1_ac8bj"]
 [ext_resource type="Texture2D" uid="uid://bgqy5r2n1r2i5" path="res://items/sword2.png" id="2_6pmri"]
 [ext_resource type="Texture2D" uid="uid://2rph0twoutaw" path="res://items/gunB.png" id="3_k72a2"]
 [ext_resource type="Texture2D" uid="uid://dudftn3jugwlv" path="res://items/gunG.png" id="4_ce5jn"]
 [ext_resource type="Texture2D" uid="uid://dc4wp3xc1m1vr" path="res://items/gunR.png" id="5_15i2l"]
-[ext_resource type="Texture2D" uid="uid://wsaamuwmpf4l" path="res://items/bomb.png" id="6_bshay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxqsb"]
 size = Vector2(29, 33)
@@ -22,23 +21,19 @@ shape = SubResource("RectangleShape2D_pxqsb")
 visible = false
 texture = ExtResource("2_6pmri")
 
-[node name="GunB" type="Sprite2D" parent="."]
+[node name="Gun" type="Sprite2D" parent="."]
 visible = false
 rotation = -1.5708
 texture = ExtResource("3_k72a2")
 
-[node name="GunG" type="Sprite2D" parent="."]
+[node name="Gun2" type="Sprite2D" parent="."]
 visible = false
 rotation = -1.5708
 texture = ExtResource("4_ce5jn")
 
-[node name="GunR" type="Sprite2D" parent="."]
+[node name="Gun3" type="Sprite2D" parent="."]
 visible = false
 rotation = -1.5708
 texture = ExtResource("5_15i2l")
-
-[node name="Bomb" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("6_bshay")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

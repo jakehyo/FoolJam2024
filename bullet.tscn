@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgrtqsgshegib"]
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_tokn7"]
-[ext_resource type="Texture2D" uid="uid://buegcbg1j3vwl" path="res://Bullet small.PNG" id="2_dsl2f"]
+[ext_resource type="Texture2D" uid="uid://buegcbg1j3vwl" path="res://Bullet small.PNG" id="2_m1xck"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cyvly"]
-radius = 4.47214
+radius = 18.0
 
 [node name="Bullet" type="Area2D"]
 top_level = true
@@ -13,7 +13,8 @@ collision_mask = 2
 script = ExtResource("1_tokn7")
 
 [node name="Projectile" type="Sprite2D" parent="."]
-texture = ExtResource("2_dsl2f")
+scale = Vector2(5, 5)
+texture = ExtResource("2_m1xck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cyvly")
