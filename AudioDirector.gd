@@ -38,7 +38,7 @@ func _on_game_set_music_intense():
 func fadeout(stream_to_fade: AudioStreamPlayer):
 	fadeOutInProg = true
 	while stream_to_fade.volume_db > -90.0:
-		stream_to_fade.volume_db -= 0.2
+		stream_to_fade.volume_db -= 0.1
 		await get_tree().create_timer(0.001).timeout
 	fadeOutInProg = false
 	fadeOutComplete.emit()
