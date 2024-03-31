@@ -19,6 +19,7 @@ func _process(delta):
 	time_since_last_shot += delta
 
 func shoot():
+	%SFX.play_sound(%SFX.gunshot)
 	for i in range(0, bullets_per_shot):
 		const BULLET = preload("res://bullet.tscn")
 		var new_bullet = BULLET.instantiate()

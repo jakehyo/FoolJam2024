@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d2duel2ykvpgx"]
+[gd_scene load_steps=17 format=3 uid="uid://d2duel2ykvpgx"]
 
 [ext_resource type="Script" path="res://fooljamgame.gd" id="1_m7jyc"]
 [ext_resource type="PackedScene" uid="uid://betjalark706r" path="res://player.tscn" id="1_mwo0h"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" path="res://background/stone1.tscn" id="6_rapop"]
 [ext_resource type="PackedScene" path="res://background/stone2.tscn" id="7_bjy8r"]
 [ext_resource type="PackedScene" path="res://background/tree.tscn" id="8_fckou"]
-[ext_resource type="PackedScene" path="res://chest.tscn" id="9_mk77n"]
+[ext_resource type="PackedScene" uid="uid://c3c75gyoevuf8" path="res://chest.tscn" id="9_mk77n"]
 [ext_resource type="PackedScene" uid="uid://ctqeefw8bbby" path="res://audio_director.tscn" id="10_cvv13"]
+[ext_resource type="PackedScene" uid="uid://dfamkd4aaeg51" path="res://sfx.tscn" id="11_23fp4"]
 [ext_resource type="Script" path="res://PauseScreen.gd" id="11_b57ti"]
 
 [sub_resource type="Curve2D" id="Curve2D_0qooc"]
@@ -3167,6 +3168,7 @@ z_index = -1
 position = Vector2(-5719, -788)
 
 [node name="AudioDirector" parent="." instance=ExtResource("10_cvv13")]
+unique_name_in_owner = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -3230,6 +3232,9 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 80
 text = "EXIT"
+
+[node name="SFX" parent="." instance=ExtResource("11_23fp4")]
+unique_name_in_owner = true
 
 [connection signal="set_music_calm" from="." to="AudioDirector" method="_on_game_set_music_calm"]
 [connection signal="set_music_intense" from="." to="AudioDirector" method="_on_game_set_music_intense"]

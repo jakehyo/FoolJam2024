@@ -12,8 +12,9 @@ func play_hurt():
 	%AnimationPlayer.queue("walk")
 	
 func flip():
-	var isflipped = %Body.flip_h
-	%Body.flip_h = !isflipped
+	#var isflipped = %Body.flip_h
+	#%Body.flip_h = !isflipped
+	pass
 	
 func is_hurt():
 	return %AnimationPlayer.assigned_animation == "hurt"

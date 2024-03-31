@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c861oiix7bbc7"]
+[gd_scene load_steps=6 format=3 uid="uid://c3c75gyoevuf8"]
 
 [ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/ground_shadow.png" id="1_60aog"]
 [ext_resource type="Script" path="res://chest.gd" id="1_f8pp6"]
 [ext_resource type="Texture2D" uid="uid://on8uxcoknwrn" path="res://items/chest.png" id="2_u3mdu"]
+[ext_resource type="PackedScene" uid="uid://dfamkd4aaeg51" path="res://sfx.tscn" id="4_42g5q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68jk6"]
 size = Vector2(26, 23)
@@ -27,5 +28,8 @@ scale = Vector2(2, 2)
 
 [node name="ChestBody" type="Sprite2D" parent="Anchor"]
 texture = ExtResource("2_u3mdu")
+
+[node name="SFX" parent="." instance=ExtResource("4_42g5q")]
+unique_name_in_owner = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

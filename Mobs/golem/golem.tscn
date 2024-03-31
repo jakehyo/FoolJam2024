@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dq5q37n1wkuca"]
+[gd_scene load_steps=10 format=3 uid="uid://dq5q37n1wkuca"]
 
 [ext_resource type="Script" path="res://characters/slime/slime.gd" id="1_i24ng"]
 [ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/ground_shadow.png" id="2_pjq8o"]
 [ext_resource type="Texture2D" uid="uid://d2nw36e8vq1re" path="res://Mobs/golem/Golem_hoe_sprite.PNG" id="3_sphrg"]
+[ext_resource type="PackedScene" uid="uid://dfamkd4aaeg51" path="res://sfx.tscn" id="4_vwr6m"]
 
 [sub_resource type="Animation" id="Animation_y4lve"]
 length = 0.001
@@ -138,3 +139,6 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_j6cum")
 }
+
+[node name="SFX" parent="." instance=ExtResource("4_vwr6m")]
+unique_name_in_owner = true

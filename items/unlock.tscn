@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c46l10lem65ly"]
+[gd_scene load_steps=5 format=3 uid="uid://dcdhr2gopwtug"]
 
 [ext_resource type="Script" path="res://unlock.gd" id="1_0ye0q"]
+[ext_resource type="PackedScene" uid="uid://dfamkd4aaeg51" path="res://sfx.tscn" id="2_k3kgr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ncmdh"]
 font_size = 76
@@ -85,6 +86,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.117647)
+
+[node name="SFX" parent="." instance=ExtResource("2_k3kgr")]
+unique_name_in_owner = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]

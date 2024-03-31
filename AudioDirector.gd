@@ -50,3 +50,7 @@ func fadein(stream_to_fade: AudioStreamPlayer):
 		await get_tree().create_timer(0.001).timeout
 	fadeInProg = false
 	fadeInComplete.emit()
+
+func stopAllMusic():
+	fadeout(%MusicIntense)
+	fadeout(%MusicCalm)

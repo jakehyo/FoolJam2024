@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://betjalark706r"]
+[gd_scene load_steps=11 format=3 uid="uid://betjalark706r"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_a14st"]
 [ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="2_anrc5"]
 [ext_resource type="PackedScene" uid="uid://bow8xpr5nxl4l" path="res://items/gun.tscn" id="3_8c0kc"]
 [ext_resource type="Script" path="res://Cursor.gd" id="4_pbdm3"]
 [ext_resource type="Texture2D" uid="uid://ch83b53tp83ok" path="res://crosshair.png" id="5_i6i86"]
+[ext_resource type="PackedScene" uid="uid://dfamkd4aaeg51" path="res://sfx.tscn" id="6_66atv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jt1py"]
 radius = 29.15
@@ -41,7 +42,7 @@ unique_name_in_owner = true
 
 [node name="Weapons" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, -45)
+position = Vector2(0, -25)
 
 [node name="Gun" parent="Weapons" instance=ExtResource("3_8c0kc")]
 unique_name_in_owner = true
@@ -73,3 +74,6 @@ script = ExtResource("4_pbdm3")
 
 [node name="Sprite2D" type="Sprite2D" parent="Cursor"]
 texture = ExtResource("5_i6i86")
+
+[node name="SFX" parent="." instance=ExtResource("6_66atv")]
+unique_name_in_owner = true

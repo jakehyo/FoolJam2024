@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://h6kqcl8qg3t2"]
+[gd_scene load_steps=9 format=3 uid="uid://h6kqcl8qg3t2"]
 
 [ext_resource type="Script" path="res://items/item.gd" id="1_ac8bj"]
 [ext_resource type="Texture2D" uid="uid://bgqy5r2n1r2i5" path="res://items/sword2.png" id="2_6pmri"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dudftn3jugwlv" path="res://items/gunG.png" id="4_ce5jn"]
 [ext_resource type="Texture2D" uid="uid://dc4wp3xc1m1vr" path="res://items/gunR.png" id="5_15i2l"]
 [ext_resource type="Texture2D" uid="uid://wsaamuwmpf4l" path="res://items/bomb.png" id="6_bshay"]
+[ext_resource type="PackedScene" uid="uid://dfamkd4aaeg51" path="res://sfx.tscn" id="7_eefxg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxqsb"]
 size = Vector2(29, 33)
@@ -40,5 +41,8 @@ texture = ExtResource("5_15i2l")
 [node name="Bomb" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("6_bshay")
+
+[node name="SFX" parent="." instance=ExtResource("7_eefxg")]
+unique_name_in_owner = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

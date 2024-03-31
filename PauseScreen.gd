@@ -8,4 +8,5 @@ func _on_return_button_pressed():
 
 
 func _on_exit_game_pressed():
+	%SFX.play_sound(%SFX.confirm)
 	get_tree().quit()

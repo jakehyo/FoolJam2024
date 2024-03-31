@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://bbqxoxwskkani"]
+[gd_scene load_steps=2 format=3 uid="uid://bluaamgysdepu"]
+
+[ext_resource type="PackedScene" uid="uid://dfamkd4aaeg51" path="res://sfx.tscn" id="1_458p4"]
 
 [node name="Ending" type="Node2D"]
+
+[node name="SFX" parent="." instance=ExtResource("1_458p4")]
