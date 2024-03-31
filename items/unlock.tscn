@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c46l10lem65ly"]
+[gd_scene load_steps=4 format=3 uid="uid://c46l10lem65ly"]
 
-[ext_resource type="Script" path="res://unlock.gd" id="1_gmka6"]
+[ext_resource type="Script" path="res://unlock.gd" id="1_0ye0q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ncmdh"]
+font_size = 76
 
 [sub_resource type="LabelSettings" id="LabelSettings_ncubu"]
 font_size = 84
@@ -9,13 +12,33 @@ outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Unlock" type="CanvasLayer"]
-script = ExtResource("1_gmka6")
+process_mode = 3
+script = ExtResource("1_0ye0q")
 
 [node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
 process_mode = 3
 wait_time = 10.0
 one_shot = true
 autostart = true
+
+[node name="Time" type="Label" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 42.0
+offset_right = 200.0
+offset_bottom = 148.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Test"
+label_settings = SubResource("LabelSettings_ncmdh")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 unique_name_in_owner = true

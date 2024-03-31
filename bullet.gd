@@ -4,11 +4,12 @@ var travelled_distance = 0
 
 var SPEED = 1000.0
 var RANGE = 1200.0
+var OFFSET = 0.0
 var DAMAGE = 1
 var PIERCE = 0
+@onready var direction = Vector2.RIGHT.rotated(rotation)
 
 func _physics_process(delta):
-	var direction = Vector2.RIGHT.rotated(rotation)
 	position += direction * SPEED * delta
 	
 	travelled_distance += SPEED * delta

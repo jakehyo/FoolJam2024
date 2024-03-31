@@ -5,8 +5,12 @@ var chest
 
 func _ready():
 	parent = get_parent()
+	print("Ready")
 	#Only grab focus after player releases WASD keys
 	%LineEdit.grab_focus()
+	
+func _process(_delta):
+	%Time.text = str(%Timer.time_left).pad_decimals(2)
 	
 func open_the_gates():
 	#Play FAIL
