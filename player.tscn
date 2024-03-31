@@ -27,6 +27,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="Player" type="CharacterBody2D"]
+platform_floor_layers = 0
 script = ExtResource("1_a14st")
 
 [node name="Slime" parent="." instance=ExtResource("2_anrc5")]
@@ -41,10 +42,6 @@ unique_name_in_owner = true
 [node name="Gun" parent="." instance=ExtResource("3_8c0kc")]
 unique_name_in_owner = true
 position = Vector2(0, -44)
-shoot_cooldown = 0.05
-spread = 0.7
-bullet_damage = 1
-bullet_pierce = 1
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true

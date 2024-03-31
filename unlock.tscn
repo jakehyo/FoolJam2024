@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://c46l10lem65ly"]
+
+[ext_resource type="Script" path="res://unlock.gd" id="1_gmka6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ncubu"]
+font_size = 84
+font_color = Color(0.376471, 0.741176, 1, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Unlock" type="CanvasLayer"]
+script = ExtResource("1_gmka6")
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 3
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -377.0
+offset_top = -169.0
+offset_right = 377.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dog"
+label_settings = SubResource("LabelSettings_ncubu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.0
+offset_top = 5.0
+offset_right = 263.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Type Here"
+alignment = 1
+expand_to_text_length = true
+caret_blink = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.117647)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
