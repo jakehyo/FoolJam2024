@@ -125,6 +125,7 @@ texture = ExtResource("2_wac4y")
 [node name="Anchor" type="Marker2D" parent="."]
 
 [node name="WolfBody" type="Sprite2D" parent="Anchor"]
+unique_name_in_owner = true
 position = Vector2(0, 5.52423)
 scale = Vector2(4.125, 4.125)
 texture = ExtResource("3_xwryu")
