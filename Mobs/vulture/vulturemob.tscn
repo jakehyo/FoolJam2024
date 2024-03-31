@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://du4llyfaqubx4"]
+
+[ext_resource type="Script" path="res://Mob.gd" id="1_hp5ew"]
+[ext_resource type="PackedScene" uid="uid://t8f861llun6o" path="res://Mobs/vulture/vulture.tscn" id="2_erf13"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0ttg"]
+radius = 49.0102
+
+[node name="Vulture" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+platform_floor_layers = 0
+script = ExtResource("1_hp5ew")
+
+[node name="Mob" parent="." instance=ExtResource("2_erf13")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -30)
+shape = SubResource("CircleShape2D_t0ttg")

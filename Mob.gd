@@ -8,19 +8,19 @@ var health = 3
 var onRight
 
 func _ready():
-	%Wolf.play_walk()
+	%Mob.play_walk()
 	onRight = global_position.x - player.global_position.x >= 0.0
 	if !onRight:
-		%Wolf.flip()
+		%Mob.flip()
 	
 func _process(_delta):
 	if global_position.x - player.global_position.x < 0.0 && onRight:
 		onRight = false
-		%Wolf.flip()
+		%Mob.flip()
 	
 	if global_position.x - player.global_position.x >= 0.0 && !onRight:
 		onRight = true
-		%Wolf.flip()
+		%Mob.flip()
 	
 
 func _physics_process(_delta):
@@ -30,7 +30,7 @@ func _physics_process(_delta):
 
 func take_damage(amount):
 	health -= amount
-	%Wolf.play_hurt()
+	%Mob.play_hurt()
 	if health <= 0:
 		on_mob_death.emit()
 		queue_free()

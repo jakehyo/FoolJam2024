@@ -1,6 +1,7 @@
 extends Node2D
 
 var mobCount: int = 0
+var mobs = [preload("res://Mobs/wolf/wolfmob.tscn"),preload("res://Mobs/vulture/vulturemob.tscn"),preload("res://Mobs/golem/ruingolemmob.tscn")]
 @export var intenseMusicMobCount: int = 15
 
 signal set_music_intense
@@ -18,7 +19,8 @@ func _physics_process(_delta):
 
 func spawn_mob():
 	#Spawn different mobs using different scenes and rand function
-	var new_mob = preload("res://mob.tscn").instantiate()
+	var index = randi_range(0,2)
+	var new_mob = mobs[index].instantiate()
 	mobCount += 1
 	if mobCount >= intenseMusicMobCount:
 		set_music_intense.emit()
@@ -30,7 +32,7 @@ func spawn_mob():
 
 
 func _on_timer_timeout():
-	#spawn_mob()
+	spawn_mob()
 	pass
 
 

@@ -41,7 +41,7 @@ unique_name_in_owner = true
 
 [node name="Weapons" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, -25)
+position = Vector2(0, -45)
 
 [node name="Gun" parent="Weapons" instance=ExtResource("3_8c0kc")]
 unique_name_in_owner = true
