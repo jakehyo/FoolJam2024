@@ -23,3 +23,4 @@ death = ExtResource("9_jhuok")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+max_polyphony = 100

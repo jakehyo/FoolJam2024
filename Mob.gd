@@ -33,6 +33,7 @@ func take_damage(amount):
 	%Wolf.play_hurt()
 	if health <= 0:
 		on_mob_death.emit()
+		%SFX.play_sound(%SFX.cancel)
 		queue_free()
 		const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
 		var smoke = SMOKE_SCENE.instantiate()
