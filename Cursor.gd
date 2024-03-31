@@ -10,5 +10,5 @@ func _ready():
 
 func _physics_process(_delta):
 	%Cursor.position = get_viewport().get_mouse_position() - (Vector2(get_viewport().size.x, get_viewport().size.y) / 2)
-	%Gun.look_at(%Cursor.global_position)
+	%Weapons.look_at(%Cursor.global_position)
 	

@@ -10,21 +10,28 @@ radius = 522.009
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_g4pjn")
+bullets_per_shot = 30
+spread = 1.0
+offset = 100.0
+bullet_speed = 1.0
+bullet_range = 1.0
+bullet_damage = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cibm3")
 
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
-[node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
+[node name="Sword" type="Sprite2D" parent="WeaponPivot"]
 position = Vector2(110, 0)
 rotation = 2.18166
 scale = Vector2(3, 3)
 texture = ExtResource("2_q0t62")
 
-[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Sword"]
 unique_name_in_owner = true
-position = Vector2(25, -11)
+position = Vector2(-10.5156, -15.0178)
+rotation = -2.18166
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3

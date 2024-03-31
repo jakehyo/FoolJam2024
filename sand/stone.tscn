@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxhu3bybsrlp8"]
+
+[ext_resource type="Texture2D" uid="uid://c1ekbkub8phoj" path="res://background/mushroom_tree.PNG" id="1_tu2p6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f8rjx"]
+radius = 20.0
+
+[node name="Tree" type="StaticBody2D"]
+
+[node name="MushroomTree" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_tu2p6")
+offset = Vector2(-4.995, -33.935)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_f8rjx")

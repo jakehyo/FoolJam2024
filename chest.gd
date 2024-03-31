@@ -5,7 +5,7 @@ extends Area2D
 func _on_body_entered(_body):
 	#Pause Game and Start Typing Sequence
 	get_tree().paused = true
-	const UNLOCK = preload("res://unlock.tscn")
+	const UNLOCK = preload("res://items/unlock.tscn")
 	var unlock_overlay = UNLOCK.instantiate()
 	unlock_overlay.chest = self
 	get_parent().add_child(unlock_overlay)
