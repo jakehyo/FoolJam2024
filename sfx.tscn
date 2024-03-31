@@ -1,0 +1,25 @@
+[gd_scene load_steps=10 format=3 uid="uid://dfamkd4aaeg51"]
+
+[ext_resource type="Script" path="res://SFX.gd" id="1_gy0xn"]
+[ext_resource type="AudioStream" uid="uid://028dfaw4m6y0" path="res://audio/sfx/backcancel.wav" id="2_nfbct"]
+[ext_resource type="AudioStream" uid="uid://c2t2ktlgsd165" path="res://audio/sfx/confirm.wav" id="3_rixx8"]
+[ext_resource type="AudioStream" uid="uid://bg2yam1p2bgna" path="res://audio/sfx/hoverselect.wav" id="4_wficu"]
+[ext_resource type="AudioStream" uid="uid://drs6qit5puu0u" path="res://audio/sfx/Bluezone_BC0295_sci_fi_weapon_gun_shot_008.wav" id="5_7m1u4"]
+[ext_resource type="AudioStream" uid="uid://bwpbw7a8u4mu5" path="res://audio/sfx/WEAPSwrd_Mecha Energy Sword Cut_RogueWaves_AnimeStudio.wav" id="6_s46h4"]
+[ext_resource type="AudioStream" uid="uid://bk0t8p377jhbr" path="res://audio/sfx/Short_PowerUp_005.wav" id="7_m6yue"]
+[ext_resource type="AudioStream" uid="uid://b4rewqb7bfv66" path="res://audio/sfx/UI_Noisy_Impact_09.wav" id="8_uqi4o"]
+[ext_resource type="AudioStream" uid="uid://cmas4hq5dqi6f" path="res://audio/sfx/lose.wav" id="9_jhuok"]
+
+[node name="SFX" type="Node"]
+script = ExtResource("1_gy0xn")
+cancel = ExtResource("2_nfbct")
+confirm = ExtResource("3_rixx8")
+select = ExtResource("4_wficu")
+gunshot = ExtResource("5_7m1u4")
+sword = ExtResource("6_s46h4")
+powerup = ExtResource("7_m6yue")
+fail = ExtResource("8_uqi4o")
+death = ExtResource("9_jhuok")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true

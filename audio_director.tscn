@@ -11,9 +11,6 @@
 process_mode = 3
 script = ExtResource("1_y4o31")
 
-[node name="SFXStream" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-
 [node name="MusicCalm" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_sq0cl")
