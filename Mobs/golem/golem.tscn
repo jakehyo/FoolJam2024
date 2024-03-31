@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://thehk8mudscl"]
+[gd_scene load_steps=9 format=3 uid="uid://dq5q37n1wkuca"]
 
-[ext_resource type="Script" path="res://characters/slime/slime.gd" id="1_426bx"]
-[ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/ground_shadow.png" id="2_wac4y"]
-[ext_resource type="Texture2D" uid="uid://8xn5w3741cxj" path="res://Mobs/wolf/wolfidle.png" id="3_xwryu"]
+[ext_resource type="Script" path="res://characters/slime/slime.gd" id="1_i24ng"]
+[ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/ground_shadow.png" id="2_pjq8o"]
+[ext_resource type="Texture2D" uid="uid://d2nw36e8vq1re" path="res://Mobs/golem/Golem_hoe_sprite.PNG" id="3_sphrg"]
 
 [sub_resource type="Animation" id="Animation_y4lve"]
 length = 0.001
@@ -112,24 +112,26 @@ _data = {
 "walk": SubResource("Animation_l6fy2")
 }
 
-[node name="Wolf" type="Node2D"]
-script = ExtResource("1_426bx")
+[node name="Golem" type="Node2D"]
+script = ExtResource("1_i24ng")
 
 [node name="GroundShadow" type="Sprite2D" parent="."]
 modulate = Color(0.898039, 0.878431, 0.831373, 1)
 z_index = -1
 z_as_relative = false
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_wac4y")
+texture = ExtResource("2_pjq8o")
 
 [node name="Anchor" type="Marker2D" parent="."]
 
 [node name="Body" type="Sprite2D" parent="Anchor"]
 unique_name_in_owner = true
-position = Vector2(0, 5.52423)
+position = Vector2(-1, 2)
 scale = Vector2(4.125, 4.125)
-texture = ExtResource("3_xwryu")
+texture = ExtResource("3_sphrg")
 offset = Vector2(0, -12)
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
