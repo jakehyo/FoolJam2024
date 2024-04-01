@@ -39,6 +39,7 @@ func _on_timer_timeout():
 func _on_player_health_depleted():
 	%GameOver.visible = true
 	get_tree().paused = true
+	%SFX.play_sound(%SFX.death)
 	%AudioDirector.stopAllMusic()
 
 func _on_mob_death():

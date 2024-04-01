@@ -44,6 +44,9 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 position = Vector2(0, -25)
 
+[node name="SFX" parent="Weapons" instance=ExtResource("6_66atv")]
+unique_name_in_owner = true
+
 [node name="Gun" parent="Weapons" instance=ExtResource("3_8c0kc")]
 unique_name_in_owner = true
 visible = false
@@ -74,6 +77,3 @@ script = ExtResource("4_pbdm3")
 
 [node name="Sprite2D" type="Sprite2D" parent="Cursor"]
 texture = ExtResource("5_i6i86")
-
-[node name="SFX" parent="." instance=ExtResource("6_66atv")]
-unique_name_in_owner = true

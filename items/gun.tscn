@@ -11,7 +11,6 @@ radius = 522.009
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_7xcmp")
-bullet_pierce = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cibm3")
@@ -23,6 +22,9 @@ position = Vector2(79, 0)
 scale = Vector2(3, 3)
 texture = ExtResource("2_k5ju7")
 
+[node name="SFX" parent="WeaponPivot/Pistol" instance=ExtResource("3_3t7kn")]
+unique_name_in_owner = true
+
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
 unique_name_in_owner = true
 position = Vector2(14, 0)
@@ -30,8 +32,5 @@ position = Vector2(14, 0)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
 autostart = true
-
-[node name="SFX" parent="." instance=ExtResource("3_3t7kn")]
-unique_name_in_owner = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
